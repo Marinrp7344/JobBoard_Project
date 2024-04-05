@@ -4,18 +4,19 @@
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
+
 <div style = "text-align: center; margin-top: 20px; font-size: 40px">
     <h1>Job Board</h1>
 </div>
 
 <div style = "text-align: center; margin-top: 40px;">
     <h2>View Jobs</h2>
-    <a class="button" href="#">View Board</a>
+    <a class="button" href="{% url 'posts' %}">View Board</a>
 </div>
 
 <div style = "text-align: center; margin-top: 20px;">
     <h2>Create a Job</h2>
-    <a class="button" href="#">Create</a>
+    <a class="button" href="{% url 'create-post' %}">Create</a>
 </div>
 
 {% endblock %}
