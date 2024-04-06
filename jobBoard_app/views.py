@@ -18,11 +18,11 @@ def logout(request):
 def createPost(request):
     form = PostForm()
     if(request.method == 'POST'):
-        project_data = request.POST.copy()
-        form = PostForm(project_data)
+        post_data = request.POST.copy()
+        form = PostForm(post_data)
         if form.is_valid():
-            project = form.save(commit=False)
-            project.save()
+            post = form.save(commit=False)
+            post.save()
 
             return redirect('index')
         
@@ -44,18 +44,17 @@ def updatePost(request, post_id):
 
 def deletePost(request, post_id):
     
-    project = Post.objects.get(pk=post_id)
+    post = Post.objects.get(pk=post_id)
     if(request.method == 'POST'):
-        project.delete()
+        post.delete()
         return redirect('index')
 
-    return render(request, 'jobBoard_app/post_delete.html',{'project':project})
+    return render(request, 'jobBoard_app/post_delete.html',{'post':post})
 
 class PostListView(generic.ListView):
     model = Post
     def get_context_data(self,*args, **kwargs):
         visible_post = Post.objects.all().filter(is_visible=True)
-        print("active portfolio query set", visible_post)
         context = super(PostListView, self).get_context_data(*args,**kwargs)
         context['posts'] = visible_post
         return context
