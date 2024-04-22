@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
  <head>
    <meta charset="utf-8">
@@ -59,11 +60,61 @@
     }
     .box{
         margin: 10px;
-        width: 300px;
+        width: 400px;
         height: 300px;
         background-color: #FAF9F6;
-        border: 10px solid #222;
+        border: 5px solid #222;
+        border-radius: 25px;
         text-align = center;
+    }
+    .image-box{
+      width: 600px;
+      height: 375px;
+      background-image: url('{% static 'images/job.png' %}');
+      background-size: contain;
+      background-position:center;
+      background-repeat:no-repeat;
+      border-radius: 25px;
+      text-align = center;
+      justify-content: center;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 235px;
+    }
+    .tool-grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 235px;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(#234, #222);
+      color: black;
+      text-align: center;
+    }
+    .divider {
+    border-top: 5px solid #222;
+    }
+    .detail-box{
+      margin: 10px;
+      width: 800px;
+      height: 600px;
+      background-color: #FAF9F6;
+      border: 5px solid #222;
+      border-radius: 40px;
+      text-align = center;
     }
     </style>
  </head>
@@ -91,6 +142,9 @@
          {% endblock %}
        </div>
      </div>
+     <footer class="footer"> 
+      <div style="margin-top: 10px; color: white"> Temporary Name </div>
+      </footer>
    </div>
  </body>
 </html>

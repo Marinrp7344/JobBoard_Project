@@ -1,0 +1,21 @@
+<!-- inherit from base.html-->
+{% extends "jobBoard_app/base_template.html" %}
+
+
+<!-- Replace block content in base_template.html -->
+{% block content %}
+    <div class="container">
+        <div class = "detail-box" style = "margin-bottom: 20px; text-align: left;">
+            <h1 style="font-size: 60px; text-align: center;"> {{ post.title }} </h1>
+            <div class = "divider"></div>
+            <p><strong>Description:</strong> {{ post.description }}</p>
+            <p><strong>Tools:</strong> {{ post.tools }}</p>
+            <a class="button" href="{% url 'display-tools' tool_name=post.tools %}">Tool Menu</a>
+            <a class="button" href="{% url 'display-tools-api' tool_name=post.tools %}">Tool Menu Api Version</a>
+            <p style="color: red;"><strong>*Warning: The first tool button takes about 20 seconds to load*</strong></p>
+            <p><strong>Price:</strong> {{ post.pay_rate }}</p>
+            <p><strong>Date:</strong> {{ post.dateMade }}</p>
+        </div>
+    </div>
+
+{% endblock %}

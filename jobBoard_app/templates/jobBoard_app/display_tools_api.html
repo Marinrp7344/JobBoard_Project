@@ -1,0 +1,24 @@
+{% extends "jobBoard_app/base_template.html" %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 20px; font-size: 40px">
+    <h1>Tool Display</h1>
+</div>
+
+<div class="tool-grid-container">
+    {% for product in products %}
+    <div class="box" style="margin-bottom: 20px;">
+        <div style="text-align: center; margin-top: 20px; font-size: 20px">
+            <p><strong>Brand Name:</strong> {{ product.brand }}</p>
+            <div class="divider"></div>
+            <div style="text-align: left;">
+                <p><strong>Tool Name:</strong> {{ product.title }}</p>
+                <p><strong>Price:</strong> {{ product.price }}</p>
+                <a class="button" href="{{ product.link }}">Link</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

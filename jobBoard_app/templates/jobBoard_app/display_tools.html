@@ -1,0 +1,31 @@
+{% extends "jobBoard_app/base_template.html" %}
+{% block content %}
+<div style = "text-align: center; margin-top: 20px; font-size: 40px">
+    <h1>Tool Display</h1>
+</div>
+<div class="grid-container" style="margin-left: 250px">
+    <div class="box" style="width: 300px; height: 200px;">
+            <p><strong>Tool Name:</strong> {{ tool1Name}}</p>
+            <div class = "divider"></div>
+            <p><strong>Price:</strong> {{ tool1Price }}</p>
+            <a href={{tool1Link}}>Tool 1</a>
+    </div>
+    <div class="box" style="width: 300px; height: 200px;">
+            <p><strong>Tool Name:</strong> {{ tool2Name}}</p>
+            <div class = "divider"></div>
+            <p><strong>Price:</strong> {{ tool2Price }}</p>
+            <a href={{tool2Link}}>Tool 2</a>
+    </div>
+    <div class="box" style="width: 300px; height: 200px;">
+            <p><strong>Tool Name:</strong> {{ tool3Name}}</p>
+            <div class = "divider"></div>
+            <p><strong>Price:</strong> {{ tool3Price }}</p>
+            <a href={{tool3Link}}>Tool 3</a>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
