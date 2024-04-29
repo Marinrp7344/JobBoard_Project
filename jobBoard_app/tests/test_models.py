@@ -20,4 +20,3 @@ class ModelTest(TestCase):
         self.assertEqual(self.client.user, self.user)
  
  
-

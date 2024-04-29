@@ -29,7 +29,6 @@ def logout(request):
    return HttpResponse('logout')
 
 @login_required(login_url='login')
-@allowed_user(allowed_roles=['client_role'])
 def createPost(request):
     form = PostForm()
     if(request.method == 'POST'):
@@ -50,7 +49,6 @@ def createPost(request):
 
 
 def updatePost(request, post_id):
-   
     currentUser = request.user
     post = Post.objects.get(pk=post_id)
     if(currentUser == post.client.user):
